@@ -137,13 +137,13 @@ if not DEBUG:
     # and renames the files with unique names for each version to support long-term caching
     # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     # STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-    STORAGES = {
-    # ...
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
-    
+    # STORAGES = {
+    # "staticfiles": {
+    #     "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    #                 }
+    # }
+    STATICFILES_STORAGE = 'django_tailwind_app.storage.WhiteNoiseStaticFilesStorage'
+
 
 # WHITENOISE_MANIFEST_STRICT = False
 

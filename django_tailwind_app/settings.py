@@ -63,7 +63,8 @@ ROOT_URLCONF = 'django_tailwind_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        # 'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -146,11 +147,18 @@ if not DEBUG:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-COMPRESS_ROOT = BASE_DIR / 'static/'
+# COMPRESS_ROOT = BASE_DIR / 'static/'
+COMPRESS_ROOT = BASE_DIR / 'static'
  
 COMPRESS_ENABLED = True
  
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+
+TAILWIND_APP_NAME = 'django_tw_app'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
 LOGGING = {
     'version': 1,
@@ -180,11 +188,11 @@ LOGGING = {
         'django': {
             'handlers':['console_handler', 'file'],
             'propagate': True,
-            'level':'DEBUG',
+            'level':'ERROR',
         },
         'django_tailwind_app': {
             'handlers': ['console_handler', 'file'],
-            'level': 'DEBUG',
+            'level': 'ERROR',
         },
     }
 }

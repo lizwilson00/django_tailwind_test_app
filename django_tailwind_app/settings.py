@@ -167,15 +167,19 @@ LOGGING = {
             'filename': f"{BASE_DIR}/logs/django_tailwind_app.log",
             'formatter': 'verbose'
         },
+        'console_handler': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
     },
     'loggers': {
         'django': {
-            'handlers':['file'],
+            'handlers':['console_handler', 'file'],
             'propagate': True,
             'level':'DEBUG',
         },
         'django_tailwind_app': {
-            'handlers': ['file'],
+            'handlers': ['console_handler', 'file'],
             'level': 'DEBUG',
         },
     }

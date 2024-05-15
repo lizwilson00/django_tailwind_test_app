@@ -159,8 +159,6 @@ COMPRESS_ENABLED = True
  
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
-TAILWIND_APP_NAME = 'django_tw_app'
-
 INTERNAL_IPS = [
     "127.0.0.1",
 ]

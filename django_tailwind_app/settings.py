@@ -164,7 +164,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'mysite.log',
+            'filename': f"{BASE_DIR}/logs/django_tailwind_app.log",
             'formatter': 'verbose'
         },
     },
@@ -174,7 +174,7 @@ LOGGING = {
             'propagate': True,
             'level':'DEBUG',
         },
-        'MYAPP': {
+        'django_tailwind_app': {
             'handlers': ['file'],
             'level': 'DEBUG',
         },
